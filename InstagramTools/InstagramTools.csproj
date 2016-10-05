@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Instagram.API\Authorization.cs" />
     <Compile Include="Instagram.API\GetCSRFToken.cs" />
+    <Compile Include="Instagram.API\LikePhoto.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
