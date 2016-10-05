@@ -1,4 +1,6 @@
 ﻿using Extreme.Net;
+using System;
+using System.Text;
 
 namespace InstagramTools
 {

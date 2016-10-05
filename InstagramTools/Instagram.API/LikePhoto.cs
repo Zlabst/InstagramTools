@@ -41,9 +41,9 @@ namespace InstagramTools
                        .AddHeader("X-Instagram-AJAX", "1")
                        .AddHeader("X-Requested-With", "XMLHttpRequest");
                 //Луйкаем
-                var response1 = request.Post("https://www.instagram.com/web/likes/" + metaid + "/like/");
+                 response = request.Post("https://www.instagram.com/web/likes/" + metaid + "/like/");
 
-                return response1.ToString();
+                return response.ToString();
             }
         }
     }

@@ -11,11 +11,14 @@ namespace InstagramTools
     {
         static void Main(string[] args)
         {
-            var Auth = Authorization.Login("TheBottleCode", "staspidoras");
+            var Auth = Authorization.Login("TheBottleCode", "Bottle88");
             if (Auth != null)
             {
                 Console.WriteLine("Успешно авторизировались");
-                Console.WriteLine(LikePhoto.Like(Auth.Cookies, "https://www.instagram.com/p/BLG0X6Cj8Ha/"));
+                if(LikePhoto.Like(Auth.Cookies, "https://www.instagram.com/p/BLG0X6Cj8Ha/") == "{\"status\": \"ok\"}")
+                {
+                    Console.WriteLine("Лайк поставлен");
+                }
             }
             else Console.WriteLine("Логин или пароль введен не правильно");
                 
