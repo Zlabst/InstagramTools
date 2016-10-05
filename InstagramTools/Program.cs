@@ -11,7 +11,7 @@ namespace InstagramTools
     {
         static void Main(string[] args)
         {
-            var Auth = Authorization.Login("TheBottleCode", "Bottle88");
+            var Auth = Authorization.Login("TheBottleCode", "F1NPidor");
             if (Auth != null)
             {
                 Console.WriteLine("Успешно авторизировались");
