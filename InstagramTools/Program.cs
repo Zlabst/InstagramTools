@@ -31,7 +31,7 @@ namespace InstagramTools
         static string Login()
         {
             string Login = "TheBottleCode";
-            string Password = "Bottle88";
+            string Password = "F1NPidor";
             using (var request = new HttpRequest())
             {
                 string CSRF = CSRFToken;
