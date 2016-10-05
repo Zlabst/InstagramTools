@@ -25,7 +25,7 @@ namespace InstagramTools
                 {
                     {"csrftoken", CSRF},
                     {"ig_prn", "1"},
-                    {"ig_vw", "766"},
+                    {"ig_vw", "76"},
                     {"s_network", ""}
                 };
 

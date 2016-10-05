@@ -51,9 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\GetEmail.cs" />
+    <Compile Include="Helper\GetFirstName.cs" />
     <Compile Include="Instagram.API\Authorization.cs" />
     <Compile Include="Instagram.API\GetCSRFToken.cs" />
     <Compile Include="Instagram.API\LikePhoto.cs" />
+    <Compile Include="Instagram.API\Registration.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
