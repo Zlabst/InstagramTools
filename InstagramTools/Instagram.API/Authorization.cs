@@ -1,10 +1,12 @@
 ﻿using Extreme.Net;
+using Newtonsoft.Json;
+using System;
 
 namespace InstagramTools
 {
     class Authorization
     {
-        public static string Login(string login, string password)
+        public static HttpResponse Login(string login, string password)
         {
             using (var request = new HttpRequest())
             {
@@ -27,10 +29,23 @@ namespace InstagramTools
                     {"s_network", ""}
                 };
 
-                HttpResponse response = request.Post("https://www.instagram.com/accounts/login/ajax/");
+                var response = request.Post("https://www.instagram.com/accounts/login/ajax/");
 
-                return response.ToString();
+                JsonConvert.DeserializeObject<IsAuthenticated>(response.ToString());
+
+                    if (IsAuthenticated.Client_Authenticated == true)
+                    {
+                        return response;
+                    }
+                    else return null;     
             }
         }
+
+    }
+
+    public class IsAuthenticated
+    {
+        [JsonProperty(PropertyName = "authenticated")]
+        public static bool Client_Authenticated { get; set; }
     }
 }

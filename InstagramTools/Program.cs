@@ -11,7 +11,12 @@ namespace InstagramTools
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Authorization.Login("TheBottleCode", "F1NPidor"));
+            if (Authorization.Login("TheBottleCode", "F1NPidor") != null)
+            {
+                Console.WriteLine("Успешно авторизировались");
+            }
+            else Console.WriteLine("Логин или пароль введен не правильно");
+                
             Console.ReadKey();
         } 
     }
