@@ -35,6 +35,9 @@
     <Reference Include="eXtremeNet">
       <HintPath>..\..\..\..\..\Desktop\Coding\Libray\eXtremeNet.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\..\..\Desktop\Coding\Libray\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\..\Desktop\Coding\Libray\Newtonsoft.Json.dll</HintPath>
     </Reference>

@@ -1,9 +1,12 @@
 ﻿using Extreme.Net;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace InstagramTools
 {
@@ -27,8 +30,20 @@ namespace InstagramTools
                        .AddHeader("X-Requested-With", "XMLHttpRequest");
 
                 var response = request.Post(Url);
+                //Парсим ответ хмл
+                HtmlDocument doc = new HtmlDocument();
 
-                return response.ToString();
+                doc.LoadHtml(response.ToString());
+                //Как-то блять находим там нужный нам айди поста
+                string metaid = doc.DocumentNode.SelectSingleNode("/html/head/meta[18]").OuterHtml.Remove(0, 58).Remove(19, 2);
+
+                request.AddHeader("X-CSRFToken", CSRF)
+                       .AddHeader("X-Instagram-AJAX", "1")
+                       .AddHeader("X-Requested-With", "XMLHttpRequest");
+                //Луйкаем
+                var response1 = request.Post("https://www.instagram.com/web/likes/" + metaid + "/like/");
+
+                return response1.ToString();
             }
         }
     }
